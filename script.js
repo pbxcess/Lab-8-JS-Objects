@@ -11,4 +11,4 @@ const student = {
 
 console.log("Name:", student.name);
 console.log("Age:", student.age);
-console.log("Student info:", student.displayInfo)
+console.log("Student info:", student.displayInfo());
