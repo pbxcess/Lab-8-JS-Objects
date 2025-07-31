@@ -16,3 +16,7 @@ console.log("Student info:", student.displayInfo());
 //Part 2
 const jsonString = JSON.stringify(student);
 console.log("JSON String:", jsonString);
+
+const studentFromJSON = JSON.parse(jsonString);
+console.log("Parsed Object:", studentFromJSON);
+console.log("Is parsed equal to original?", JSON.stringify(studentFromJSON) === JSON.stringify(student));
