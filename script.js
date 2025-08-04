@@ -32,5 +32,10 @@ console.log("First score:", firstScore);
 console.log("Second score:", secondScore);
 
 //Part 4
-const clonedStudent = { ...student, graduationYear: 2025 };
-console.log("Cloned student with graduationYear", clonedStudent);
+const { displayInfo, ...dataOnly } = student;
+const clonedDataOnly = { ...dataOnly, graduationYear: 2025 };
+console.log("Cloned student with graduation year:", clonedDataOnly); //cloned so that displayInfo does not show up from the first student object
+
+const newCourses = ["CPAN111", "WRIT120", "CPAN116"]
+const mergedCourses = [...student.courses, ...newCourses];
+console.log("Merged courses:", mergedCourses);
