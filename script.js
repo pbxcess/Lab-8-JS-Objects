@@ -39,3 +39,16 @@ console.log("Cloned student with graduation year:", clonedDataOnly); //cloned so
 const newCourses = ["CPAN111", "WRIT120", "CPAN116"]
 const mergedCourses = [...student.courses, ...newCourses];
 console.log("Merged courses:", mergedCourses);
+
+//Part 5
+student.addCourse = function(courseName) {
+    this.courses.push(courseName);
+};
+
+student.totalCourses = function() {
+    return this.courses.length;
+};
+
+student.addCourse("WRIT220");
+console.log("Courses after adding WRIT220:", student.courses);
+console.log("Total number of courses:", student.totalCourses());
