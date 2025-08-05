@@ -69,6 +69,6 @@ console.log("Courses (not including merged courses after adding WRIT220:", stude
 console.log("Total number of courses:", student.totalCourses());
 
 
-//Bonus
+//Bonus average score
 const averageScore = scores.reduce((sum, score) => sum + score, 0) / scores.length;
 console.log("Average score:", averageScore.toFixed(2));
