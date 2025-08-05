@@ -37,10 +37,25 @@ const clonedDataOnly = { ...dataOnly, graduationYear: 2025 };
 console.log("Cloned student with graduation year:", clonedDataOnly); //cloned so that displayInfo does not show up from the first student object
 
 const newCourses = ["CPAN111", "WRIT120", "CPAN116"]
-const mergedCourses = [...student.courses, ...newCourses];
-console.log("Merged courses:", mergedCourses);
+let mergedCourses = [...student.courses, ...newCourses];
+console.log("Initial merged courses:", mergedCourses);
 
-//Part 5
+//Part 5 but adding method so that the dynamically added course is added to merged course array
+student.addToMergedCourses = function(courseName) {
+    mergedCourses.push(courseName);
+    console.log(`Added ${courseName} to merged courses.`);
+};
+
+student.totalMergedCourses = function() {
+    return mergedCourses.length;
+};
+
+console.log("Before:", mergedCourses);
+student.addToMergedCourses("WRIT220");
+console.log("After adding WRIT220:", mergedCourses);
+console.log("Total merged courses:", student.totalMergedCourses());
+
+//adding method to student object to dynamically add course to courses array (but without merged courses from part 4)
 student.addCourse = function(courseName) {
     this.courses.push(courseName);
 };
@@ -50,5 +65,10 @@ student.totalCourses = function() {
 };
 
 student.addCourse("WRIT220");
-console.log("Courses after adding WRIT220:", student.courses);
+console.log("Courses (not including merged courses after adding WRIT220:", student.courses);
 console.log("Total number of courses:", student.totalCourses());
+
+
+//Bonus
+const averageScore = scores.reduce((sum, score) => sum + score, 0) / scores.length;
+console.log("Average score:", averageScore.toFixed(2));
